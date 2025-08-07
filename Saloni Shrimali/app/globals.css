@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-albert-sans: 'Albert Sans Variable', sans-serif;
+  --font-playwrite: 'Playwrite AU NSW Variable', cursive;
+}
+
+.font-albert-sans {
+  font-family: var(--font-albert-sans);
+}
+
+.font-playwrite {
+  font-family: var(--font-playwrite);
+}
+
+.font-cursive {
+  font-family: cursive;
+}
+
+.font-serif {
+  font-family: serif;
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-albert-sans);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e11d48;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #be185d;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.animate-pulse-heart {
+  animation: pulse-heart 2s infinite;
+}
+
+/* Glow animations */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(236, 72, 153, 0.3), 0 0 60px rgba(236, 72, 153, 0.1);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(236, 72, 153, 0.5), 0 0 90px rgba(236, 72, 153, 0.3);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow-fade {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+    filter: brightness(1);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(244, 63, 94, 0.7), 0 0 35px rgba(244, 63, 94, 0.4);
+    filter: brightness(1.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-fade 2s infinite;
+}
+
+/* Timeline rod glow */
+.timeline-rod-glow {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+  animation: glow-fade 4s infinite;
+}
+
+/* Timeline card glow animation - pink/red hues only */
+@keyframes card-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4), 0 0 40px rgba(236, 72, 153, 0.2);
+    border-color: rgba(236, 72, 153, 0.6);
+    filter: brightness(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(244, 63, 94, 0.6), 0 0 50px rgba(244, 63, 94, 0.4), 0 0 70px rgba(244, 63, 94, 0.2);
+    border-color: rgba(244, 63, 94, 0.8);
+    filter: brightness(1.1);
+  }
+}
+
+.animate-card-glow {
+  animation: card-glow 3s infinite;
+  border: 2px solid;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
